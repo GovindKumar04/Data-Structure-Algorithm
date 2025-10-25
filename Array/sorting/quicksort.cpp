@@ -5,8 +5,8 @@ int arr[] = {4, 2, 5, 1, 3, 7, 9, 87, 3645, 8, 9};
 int partion(int arr[], int low, int high)
 {
     int pivot = arr[low];
-    int pivotIndex = 0;
-    for (int i = 0; i <= high; i++)
+    int pivotIndex = low;
+    for (int i = low+1; i <= high; i++)
     {
         if (pivot > arr[i])
         {
@@ -28,7 +28,7 @@ int partion(int arr[], int low, int high)
 
         if (i < pivotIndex && j > pivotIndex)
         {
-            swap(arr[i], arr[j]);
+            swap(arr[i++], arr[j--]);
         }
     }
     return pivotIndex;
